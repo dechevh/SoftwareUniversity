@@ -1,0 +1,18 @@
+<h1>Recipes</h1>
+
+<ul>
+    {% for recipe in recipes %}
+    <li>
+        <a href="/recipes/{{ recipe.id }}/">{{ recipe.title }}</a> [<a href="/recipes/{{ recipe.id }}/delete/">delete</a>]
+    </li>
+    {% endfor %}
+</ul>
+
+
+
+<h2>Add new recipe</h2>
+<form action="." method="POST">
+    {{ form.as_p }}
+    <input type="submit" value="Add Recipe" />
+    {% csrf_token %}
+</form>
